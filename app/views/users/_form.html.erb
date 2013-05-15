@@ -1,0 +1,14 @@
+<%= form_for(@user) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <% SubscriptionPlan.all.each do |subscription_plan| %>
+    <label>
+      <input type="checkbox" name="user[subscription_plan_ids][]"
+        value="<%= subscription_plan.id %>">
+      <%= render subscription_plan %>
+    </label>
+    <br>
+  <% end %>
+  <%= f.submit %>
+<% end %>

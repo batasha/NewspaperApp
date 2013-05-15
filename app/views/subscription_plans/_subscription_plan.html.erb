@@ -1,0 +1,3 @@
+<% type = "#{subscription_plan.weekly ? "Weekly" : "Daily"} Subscription" %>
+<% cost = "$#{number_with_precision(subscription_plan.price, precision: 2)}" %>
+<%= "#{subscription_plan.newspaper.title} #{type} #{cost}" %>
