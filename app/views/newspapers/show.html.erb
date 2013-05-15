@@ -3,3 +3,11 @@
 <p>
   Editor: <%= @newspaper.editor %>
 </p>
+<ul>
+  <% @newspaper.subscription_plans.each do |sub| %>
+    <li>
+      <%= "#{sub.weekly ? "Weekly" : "Daily"} Subscription" %><br>
+      <%= "$#{number_with_precision(sub.price, :precision => 2)}"%>
+    </li>
+  <% end %>
+</ul>

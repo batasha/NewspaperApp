@@ -1,7 +1,13 @@
 NewspaperApp::Application.routes.draw do
   root to: 'newspapers#index'
 
-  resources :newspapers
+  resources :newspapers do
+    resources :subscription_plans, only: [:new]
+  end
+
+  resources :subscription_plans, except: [:new]
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
