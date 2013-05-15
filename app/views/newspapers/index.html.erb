@@ -2,6 +2,7 @@
 
 <ul>
   <% @newspapers.each do |np| %>
-    <li><%= "#{np.title} (editor: #{np.editor})" %></li>
+    <li><h4><%= link_to np.title, np %></h4>
+        <small><%= "(editor: #{np.editor})" %></small></li>
   <% end %>
 </ul>
