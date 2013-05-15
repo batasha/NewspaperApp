@@ -2,12 +2,18 @@
   <%= f.label :name %>
   <%= f.text_field :name %>
   <br>
-  <% SubscriptionPlan.all.each do |subscription_plan| %>
+  <% Newspaper.all.each do |paper| %>
     <label>
-      <input type="checkbox" name="user[subscription_plan_ids][]"
-        value="<%= subscription_plan.id %>">
-      <%= render subscription_plan %>
+      <%= paper.title %>
+      <br>
+      <select name="user[subscription_plan_ids][]">
+        <option value="">Select</option>
+        <%= paper.subscription_plans.each do |sub| %>
+          <option value="<%= sub.id %>"><%= sub %></option>
+        <% end %>
+      </select>
     </label>
+    <br>
     <br>
   <% end %>
   <%= f.submit %>

@@ -15,4 +15,10 @@ class SubscriptionPlan < ActiveRecord::Base
   def price=(dollars)
     self.price_in_cents = (dollars.to_f * 100).to_i
   end
+
+  def to_s
+    type = "#{weekly ? "Weekly" : "Daily"} Subscription"
+    cost = "$%.2f" % price
+    "#{type} #{cost}"
+  end
 end
