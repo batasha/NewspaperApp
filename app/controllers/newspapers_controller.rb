@@ -5,10 +5,11 @@ class NewspapersController < ApplicationController
 
   def new
     @newspaper = Newspaper.new
+    2.times { @newspaper.subscription_plans.build }
   end
 
   def create
-    if (@newspaper = Newspaper.new(params[:newspaper])).save
+    if (@newspaper = Newspaper.new(params[:newspaper])).save!
       redirect_to @newspaper
     else
       render 'new'

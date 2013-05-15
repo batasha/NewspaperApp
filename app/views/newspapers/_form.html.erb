@@ -5,5 +5,17 @@
   <%= f.label :editor %>
   <%= f.text_field :editor %>
   <br>
+
+  <%= f.fields_for(:subscription_plans) do |sub_form| %>
+    <h2>Subscription Plan</h2>
+    <%= sub_form.label :price %>
+    <%= sub_form.text_field :price %>
+    <br>
+    <%= sub_form.radio_button :weekly, true %>
+    <%= sub_form.label :weekly_true, "Weekly" %>
+    <%= sub_form.radio_button :weekly, false %>
+    <%= sub_form.label :weekly_false, "Daily" %>
+  <% end %>
+  <br>
   <%= f.submit %>
 <% end %>
