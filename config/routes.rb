@@ -1,4 +1,7 @@
 NewspaperApp::Application.routes.draw do
+  root to: 'newspapers#index'
+
+  resources :newspapers
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

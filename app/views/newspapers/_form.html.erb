@@ -1,0 +1,9 @@
+<%= form_for(@newspaper) do |f| %>
+  <%= f.label :title%>
+  <%= f.text_field :title%>
+  <br>
+  <%= f.label :editor %>
+  <%= f.text_field :editor %>
+  <br>
+  <%= f.submit %>
+<% end %>

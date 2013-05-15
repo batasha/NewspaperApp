@@ -1,0 +1,7 @@
+<h1>Newspapers</h1>
+
+<ul>
+  <% @newspapers.each do |np| %>
+    <li><%= "#{np.title} (editor: #{np.editor})" %></li>
+  <% end %>
+</ul>
